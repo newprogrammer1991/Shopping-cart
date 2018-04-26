@@ -4,7 +4,7 @@ import { SET_CART_ITEMS,setItemDetails} from './../actions'
 import fetch from 'isomorphic-fetch'
 const url = 'http://localhost:8081/items/';
 
-function* itemDetailSaga(item) {
+export function* loadItemDetailSaga(item) {
     const { id } = item;
     const response = yield call(fetch, `${url}${id}`)
     const data = yield apply(response, response.json);
@@ -14,6 +14,6 @@ function* itemDetailSaga(item) {
 
 export function* itemDetailsSaga() {
     const { items } = yield take(SET_CART_ITEMS);
-    const res = yield items.map(item => fork(itemDetailSaga, item))
+    yield items.map(item => fork(loadItemDetailSaga, item))
 
 }

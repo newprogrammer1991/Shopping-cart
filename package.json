@@ -40,9 +40,9 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "chai": "^4.0.2",
+    "chai": "^4.1.2",
     "jest": "^20.0.4",
-    "mocha": "^3.4.2",
+    "mocha": "^3.5.3",
     "redux-devtools": "^3.4.0",
     "redux-tool": "^1.0.0",
     "webpack-dev-server": "^1.16.5"
